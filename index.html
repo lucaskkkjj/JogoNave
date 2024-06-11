@@ -1,0 +1,44 @@
+<!--        
+Nome: Lucas Breno                            Nº:24                    
+Nome: Luca Verdiamitti                       Nº:23   Turma:3A  -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Jogo Nave</title>
+<style>
+    #canv {
+        border: 1px solid black;
+    }
+</style>
+<script src= "gamesWeb.js" ></script>
+</head>
+<body>
+
+<canvas id="canv" width="1520" height="650">
+Este browser não suporta o objeto canvas do HTML5.
+</canvas>
+
+<div id="controls">
+    <label>Teclas: x (esquerda), v (direita), espaço (tiro)</label>
+</div>
+
+<script>
+canvas = document.getElementById("canv");
+ctx = canvas.getContext("2d");
+nave = new Image();
+nave.src = "Aeronave.png";
+nave.onload = function() {
+xNave = canvas.width / 2 - nave.width/2;
+yNave = canvas.height - nave.height;
+ctx.drawImage(nave, xNave, yNave);
+}
+
+
+document.addEventListener("keydown",
+function(evento) {
+movimentaNaveInimigo(evento.key);
+});
+</script>
+</body>
+</html>
